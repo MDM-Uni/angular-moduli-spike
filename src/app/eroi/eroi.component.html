@@ -1,0 +1,12 @@
+<h2>Lista degli Eroi</h2>
+<ul class="heroes">
+  <li *ngFor="let eroe of eroi"
+      [class.selected]="eroe === eroeSelezionato"
+      (click)="onSelect(eroe)"> <!-- ngFor direttiva che ripete il codice HTML dentro li per ogni eroe presente nella lista -->
+      <span class="badge">{{eroe.id}}</span>
+    {{eroe.nome}}
+  </li>
+</ul>
+
+<app-dettagli-eroe [eroeDaVisualizzare]="eroeSelezionato"></app-dettagli-eroe> <!-- passaggio di un oggetto di tipo Eroe da un componente ad un altro
+                                                                                [nomeProprietà]="proprietàDaPassare"-->
